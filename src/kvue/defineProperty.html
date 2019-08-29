@@ -1,0 +1,40 @@
+<!--
+ * @Description: Midas Project
+ * @version: Dev
+ * @Company: Midas
+ * @Author: 张彦斌
+ * @Date: 2019-08-27 08:32:52
+ * @LastEditors: OBKoro1
+ * @LastEditTime: 2019-08-27 08:40:08
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>你好，<span id="name"></span></p>
+    </div>
+    <script>
+      var obj = {};
+      Object.defineProperty(obj, "name", {
+        get() {
+					console.log('get');
+          return document.getElementById("name").innerText;
+        },
+        set(newVal) {
+					console.log('set');
+          document.getElementById("name").innerText = newVal;
+        }
+      });
+
+      obj.name = "Test";
+			console.log(obj.name);
+			
+    </script>
+  </body>
+</html>
