@@ -30,7 +30,8 @@
             html: "<button>这是一个按钮</button>"
           },
           created() {
-            console.log("start");
+						console.log("start");
+						console.log(this);
             setTimeout(() => {
               this.name = "我是测试";
             }, 1500);

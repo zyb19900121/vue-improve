@@ -13,8 +13,16 @@ class Kvue {
     this.observe(this.$data);
 
     //测试代码
-    new Watcher(this, "test");
-    this.test;
+    // new Watcher(this, "test");
+    // this.test;
+
+    //创建编译器
+    new Compile(options.el, this);
+
+    if (options.created) {
+      // options.created();
+      options.created.call(this);
+    }
   }
 
   //递归遍历，使传进来的对象响应化
